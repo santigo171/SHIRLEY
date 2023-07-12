@@ -22,7 +22,7 @@ import {
 } from "./SongInterface";
 import { Song } from "./SongInterface";
 
-const Cumpleaños: Song = {
+export const Cumpleannos: Song = {
     name: "Cumpleaños 🌠",
     bpm: 70,
     metric: "3/4",

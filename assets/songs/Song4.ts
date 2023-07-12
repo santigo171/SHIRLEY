@@ -22,7 +22,7 @@ import {
 } from "./SongInterface";
 import { Song } from "./SongInterface";
 
-const Shark: Song = {
+export const Shark: Song = {
     name: "Shark 🌠",
     bpm: 90,
     metric: "4/4",
