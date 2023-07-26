@@ -1,1 +1,2 @@
-./SHIRLEY_SONGS/build
+./SHIRLEY_SONGS/build/*
+SHIRLEY_SONGS/node_modules

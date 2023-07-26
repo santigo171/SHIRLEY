@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx tsc && node ./build"
+    "test": "npx tsc && node ./build/src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.4.5",
     "typescript": "^5.1.6"
   }
 }
