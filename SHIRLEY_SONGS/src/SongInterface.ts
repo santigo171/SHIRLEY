@@ -1,24 +1,25 @@
-export const Whole = Symbol();
-export const Half = Symbol();
-export const Quarter = Symbol();
-export const QuarterD = Symbol();
-export const Eighth = Symbol();
-export const EighthD = Symbol();
-export const Semiquaver = Symbol();
+export const Whole = 0;
+export const Half = 1;
+export const Quarter = 2;
+export const QuarterD = 3;
+export const Eighth = 4;
+export const EighthD = 5;
+export const Semiquaver = 6;
 
-export const C = Symbol();
-export const Cs = Symbol();
-export const D = Symbol();
-export const Ds = Symbol();
-export const E = Symbol();
-export const F = Symbol();
-export const Fs = Symbol();
-export const G = Symbol();
-export const Gs = Symbol();
-export const A = Symbol();
-export const As = Symbol();
-export const B = Symbol();
-export const C2 = Symbol();
+export const C = 0;
+export const Cs = 1;
+export const D = 2;
+export const Ds = 3;
+export const E = 4;
+export const F = 5;
+export const Fs = 6;
+export const G = 7;
+export const Gs = 8;
+export const A = 9;
+export const As = 10;
+export const B = 11;
+export const C2 = 12;
+export const silence = 13;
 
 
 export interface MusicalFigure {
@@ -28,6 +29,7 @@ export interface MusicalFigure {
 }
 
 export interface Song {
+    id: number,
     name: string,
     bpm: number,
     metric: string,
