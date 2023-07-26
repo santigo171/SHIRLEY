@@ -92,7 +92,7 @@ export const Titanic: Song = {
         {
             silence: false,
             duration: Eighth,
-            note: [B]
+            note: [As]
         },
         {
             silence: false,
@@ -109,118 +109,134 @@ export const Titanic: Song = {
             silence: false,
             duration: Quarter,//Ligada
             note: [F]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [D]
-        },
-        //
-        {
-            silence: false,
-            duration: Half,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,//Ligada
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [F]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        //
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [F]
-        },
-        //
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
-        },
-        //
-        {
-            silence: false,
-            duration: Half,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        //
-        {
-            silence: false,
-            duration: Half,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Quarter,//Ligada
-            note: [G]
         },
         {
             silence: true,
             duration: Quarter,
             note: null
         },
-        /////////////
+        //
+        {
+            silence: true,
+            duration: Half,
+            note: null
+        },
+        {
+            silence: true,
+            duration: Quarter,
+            note: null
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [G]
+        },
+        //
+        {
+            silence: false,
+            duration: Half,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Quarter,//Ligada
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [As]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [G]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [F]
+        },
+        //
+        {
+            silence: false,
+            duration: Eighth,
+            note: [G]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Half,//Ligada
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        //
+        {
+            silence: false,
+            duration: Half,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Eighth,//ligada
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        //
+        {
+            silence: false,
+            duration: Half,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: [C2]
+        },
+        //
+        {
+            silence: false,
+            duration: Half,
+            note: [G]
+        },
+        {
+            silence: true,
+            duration: Half,
+            note: null
+        },
+        ////
         {
             silence: false,
             duration: QuarterD,
@@ -244,56 +260,9 @@ export const Titanic: Song = {
         //
         {
             silence: false,
-            duration: Eighth,
-            note: [G]
+            duration: Quarter,
+            note: [E]
         },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [F]
-        },
-        //
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [B]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        //
         {
             silence: false,
             duration: Half,
@@ -301,25 +270,95 @@ export const Titanic: Song = {
         },
         {
             silence: false,
-            duration: Quarter,//Ligada
+            duration: Quarter,
+            note: [F]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Half,
             note: [F]
         },
         {
             silence: false,
             duration: Quarter,
+            note: [G]
+        },
+        //
+        {
+            silence: false,
+            duration: Half,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: [G]
+        },
+        ////////////////////
+        {
+            silence: false,
+            duration: QuarterD,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        //
+        {
+            silence: false,
+            duration:Whole,
+            note: [C]
+        },
+        //
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Eighth,
             note: [D]
         },
-        //
-        {
-            silence: false,
-            duration: Half,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,//Ligada
-            note: [C]
-        },
         {
             silence: false,
             duration: Eighth,
@@ -328,91 +367,99 @@ export const Titanic: Song = {
         {
             silence: false,
             duration: Eighth,
-            note: [G]
+            note: [As]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
         },
         //
         {
             silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
+            duration: QuarterD,
+            note: [F]
         },
         {
             silence: false,
             duration: Eighth,
             note: [F]
         },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
         //
         {
             silence: false,
-            duration: Eighth,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
             note: [G]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Half,//Ligada
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
         },
         //
         {
             silence: false,
             duration: Half,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: Eighth,
             note: [A]
         },
-        //
         {
             silence: false,
             duration: Half,
             note: [G]
         },
+        //
         {
             silence: false,
-            duration: Quarter,//Ligada
-            note: [G]
+            duration: Whole,
+            note: [C]
         },
+        //
         {
-            silence: true,
-            duration: Quarter,
-            note: null
+            silence: false,
+            duration: Whole,
+            note: [C]
         },
+        //
     ]
 }
