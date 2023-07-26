@@ -41,7 +41,7 @@ songsToExport.forEach((song) => {
 })
 
 try {
-    writeFileSync('./build/songs.json', JSON.stringify(jsonToExport))
+    writeFileSync('../SHIRLEY_ARDUINO/songs.json', JSON.stringify(jsonToExport))
     console.log("File written")
 } catch (err) {
     console.error(err)
