@@ -23,7 +23,7 @@ import {
 import { Song } from "./SongInterface";
 
 export const Estrellita: Song = {
-    name: "Estrellita 🌠",
+    name: "Estrellita",
     bpm: 60,
     metric: "4/4",
     sheet: [

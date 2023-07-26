@@ -22,157 +22,82 @@ import {
 } from "./SongInterface";
 import { Song } from "./SongInterface";
 
-export const Alegria: Song = {
-    name: "Alegria 🌠",
-    bpm: 96,
+export const Sovietico: Song = {
+    name: "Sovietico",
+    bpm: 70,
     metric: "4/4",
     sheet: [
         {
-            silence: false,
+            silence: true,
+            duration: Half,
+            note: null
+        },
+        {
+            silence: true,
             duration: Quarter,
-            note: [E]
+            note: null
+        },
+        {
+            silence: true,
+            duration: Eighth,
+            note: null
         },
         {
             silence: false,
-            duration: Quarter,
-            note: [E]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [F]
-        },
-        {
-            silence: false,
-            duration: Quarter,
+            duration: Eighth,
             note: [G]
         },
         //
         {
             silence: false,
             duration: Quarter,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: EighthD,
             note: [G]
         },
         {
             silence: false,
-            duration: Quarter,
-            note: [F]
+            duration: Semiquaver,
+            note: [A]
         },
         {
             silence: false,
             duration: Quarter,
-            note: [E]
+            note: [B]
         },
         {
             silence: false,
-            duration: Quarter,
-            note: [D]
-        },
-        //
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [D]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [E]
-        },
-        //
-        {
-            silence: false,
-            duration: QuarterD,
+            duration: Eighth,
             note: [E]
         },
         {
             silence: false,
             duration: Eighth,
-            note: [D]
-        },
-        {
-            silence: false,
-            duration: Half,
-            note: [D]
+            note: [E]
         },
         //
         {
             silence: false,
             duration: Quarter,
-            note: [E]
+            note: [A]
         },
         {
             silence: false,
-            duration: Quarter,
-            note: [E]
+            duration: EighthD,
+            note: [G]
         },
         {
             silence: false,
-            duration: Quarter,
+            duration: Semiquaver,
             note: [F]
         },
         {
             silence: false,
             duration: Quarter,
             note: [G]
-        },
-        //
-        {
-            silence: false,
-            duration: Quarter,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [F]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [E]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [D]
-        },
-        //
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [C]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [D]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [E]
-        },
-        //
-        {
-            silence: false,
-            duration: QuarterD,
-            note: [E]
         },
         {
             silence: false,
@@ -181,9 +106,66 @@ export const Alegria: Song = {
         },
         {
             silence: false,
-            duration: Half,
-            note: []
+            duration: Eighth,
+            note: [C]
         },
         //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [D]
+        },
+        {
+            silence: false,
+            duration: EighthD,
+            note: [D]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: EighthD,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Semiquaver,
+            note: [G]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [A]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [B]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C2]
+        },
+        {
+            silence: false,
+            duration: QuarterD,
+            note: [C2]
+        },
+        {
+            silence: true,
+            duration: Eighth,
+            note: null
+            //
+        },
     ]
 }

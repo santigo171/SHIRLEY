@@ -23,7 +23,7 @@ import {
 import { Song } from "./SongInterface";
 
 export const Cumpleannos: Song = {
-    name: "Cumpleaños 🌠",
+    name: "Cumpleaños",
     bpm: 70,
     metric: "3/4",
     sheet: [

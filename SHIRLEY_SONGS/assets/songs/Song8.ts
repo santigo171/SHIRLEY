@@ -23,7 +23,7 @@ import {
 import { Song } from "./SongInterface";
 
 export const Take_on_me: Song = {
-    name: "Take on me 🌠",
+    name: "Take on me",
     bpm: 150,
     metric: "4/4",
     sheet: [

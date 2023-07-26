@@ -22,76 +22,24 @@ import {
 } from "./SongInterface";
 import { Song } from "./SongInterface";
 
-export const Sovietico: Song = {
-    name: "Sovietico 🌠",
-    bpm: 70,
+export const Alegria: Song = {
+    name: "Alegria",
+    bpm: 96,
     metric: "4/4",
     sheet: [
         {
-            silence: true,
-            duration: Half,
-            note: null
-        },
-        {
-            silence: true,
-            duration: Quarter,
-            note: null
-        },
-        {
-            silence: true,
-            duration: Eighth,
-            note: null
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [G]
-        },
-        //
-        {
             silence: false,
             duration: Quarter,
-            note: [C2]
-        },
-        {
-            silence: false,
-            duration: EighthD,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Semiquaver,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [B]
-        },
-        {
-            silence: false,
-            duration: Eighth,
             note: [E]
         },
         {
             silence: false,
-            duration: Eighth,
+            duration: Quarter,
             note: [E]
         },
-        //
         {
             silence: false,
             duration: Quarter,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: EighthD,
-            note: [G]
-        },
-        {
-            silence: false,
-            duration: Semiquaver,
             note: [F]
         },
         {
@@ -99,17 +47,38 @@ export const Sovietico: Song = {
             duration: Quarter,
             note: [G]
         },
+        //
         {
             silence: false,
-            duration: Eighth,
-            note: [C]
+            duration: Quarter,
+            note: [G]
         },
         {
             silence: false,
-            duration: Eighth,
-            note: [C]
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [D]
         },
         //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [C]
+        },
         {
             silence: false,
             duration: Quarter,
@@ -117,55 +86,104 @@ export const Sovietico: Song = {
         },
         {
             silence: false,
-            duration: EighthD,
-            note: [D]
-        },
-        {
-            silence: false,
-            duration: Semiquaver,
+            duration: Quarter,
             note: [E]
         },
-        {
-            silence: false,
-            duration: Quarter,
-            note: [F]
-        },
-        {
-            silence: false,
-            duration: EighthD,
-            note: [F]
-        },
-        {
-            silence: false,
-            duration: Semiquaver,
-            note: [G]
-        },
         //
-        {
-            silence: false,
-            duration: Quarter,
-            note: [A]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [B]
-        },
-        {
-            silence: false,
-            duration: Eighth,
-            note: [C2]
-        },
         {
             silence: false,
             duration: QuarterD,
-            note: [C2]
+            note: [E]
         },
         {
-            silence: true,
+            silence: false,
             duration: Eighth,
-            note: null
-            //
+            note: [D]
         },
+        {
+            silence: false,
+            duration: Half,
+            note: [D]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [G]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [G]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [F]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [D]
+        },
+        //
+        {
+            silence: false,
+            duration: Quarter,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [D]
+        },
+        {
+            silence: false,
+            duration: Quarter,
+            note: [E]
+        },
+        //
+        {
+            silence: false,
+            duration: QuarterD,
+            note: [E]
+        },
+        {
+            silence: false,
+            duration: Eighth,
+            note: [C]
+        },
+        {
+            silence: false,
+            duration: Half,
+            note: []
+        },
+        //
     ]
 }

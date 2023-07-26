@@ -23,7 +23,7 @@ import {
 import { Song } from "./SongInterface";
 
 export const Pirates: Song = {
-    name: "Pirates 🌠",
+    name: "Pirates",
     bpm: 160,
     metric: "3/4",
     sheet: [

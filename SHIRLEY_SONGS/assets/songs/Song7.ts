@@ -23,7 +23,7 @@ import {
 import { Song } from "./SongInterface";
 
 export const Titanic: Song = {
-    name: "Titanic 🌠",
+    name: "Titanic",
     bpm: 100,
     metric: "4/4",
     sheet: [

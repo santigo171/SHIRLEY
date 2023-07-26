@@ -1,4 +1,4 @@
-import {Estrellita} from "./Song1"
+import {Estrellita} from "../assets/songs/Song1"
 const songsToExport = [Estrellita];
 const jsonToExport: any = {}
 
@@ -17,7 +17,7 @@ songsToExport.forEach((song) => {
             return musicalFigure.duration
         })
     }
-    jsonToExport[song.id] = songInJson
+    jsonToExport[song.name] = songInJson
     console.log(`written ${song.name}`)
 })
 
