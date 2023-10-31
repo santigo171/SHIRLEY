@@ -179,11 +179,6 @@ export const Alegria: Song = {
             duration: Eighth,
             note: [C]
         },
-        {
-            silence: false,
-            duration: Half,
-            note: []
-        },
         //
     ]
 }

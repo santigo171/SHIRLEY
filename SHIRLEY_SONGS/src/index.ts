@@ -27,8 +27,8 @@ songsToExport.forEach((song) => {
         notes: song.sheet.map((musicalFigure) => {
             if (musicalFigure.silence === true) {
                 return silence
-            } else {
-                return musicalFigure.note
+            } else if (musicalFigure.silence === false && musicalFigure.note !== null){
+                return musicalFigure.note[0]
             }
         }),
         durations: song.sheet.map((musicalFigure) => {
