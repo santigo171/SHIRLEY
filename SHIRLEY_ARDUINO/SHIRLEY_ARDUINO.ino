@@ -1,161 +1,110 @@
 // https://forum.arduino.cc/t/sd-card-connection-with-arduino-mega-2560/178436
+// https://forum.arduino.cc/t/parsing-an-string-from-an-sd-card-with-the-arduinojson-h-library/482810/5
+// https://forum.arduino.cc/t/explorar-y-abrir-archivos-de-una-sd/164569 See all files from SD
 
-#include "SD.h"
-#include "TMRpcm.h"
-#include "SPI.h"
-#include "pinsConnection.h"
-#include "ArduinoJson.h"
+#include <ArduinoJson.h>
 
-TMRpcm tmrpcm;
+#include "settings.h"
+#include "Note.h"
+#include "ReadJsonFromSD.h"
+
+Note notes[13];
 
 void setup()
 {
-  tmrpcm.speakerPin = 9;
-  Serial.begin(9600);
-  Serial.println("\nSHIRLEY Started");
-  Serial.println(SD.begin(SD_CHIP_PIN));
-  if(!SD.begin(SD_CHIP_PIN))
-  {
-    Serial.println("SD fail");
-    return;
-  }
-  tmrpcm.setVolume(6);
+    // Start Serial and start sd
+    Serial.begin(115200);
+    Serial.println("\n\n\nSHIRLEY Started :D");
+    ReadJsonFromSD();
 
-  tmrpcm.play("C2.wav");
-  delay(3000);
-  
-  pinMode(C_BUTTON_PIN, INPUT);
-  pinMode(CS_BUTTON_PIN, INPUT);
-  pinMode(D_BUTTON_PIN, INPUT);
-  pinMode(DS_BUTTON_PIN, INPUT);
-  pinMode(E_BUTTON_PIN, INPUT);
-  pinMode(F_BUTTON_PIN, INPUT);
-  pinMode(FS_BUTTON_PIN, INPUT);
-  pinMode(G_BUTTON_PIN, INPUT);
-  pinMode(GS_BUTTON_PIN, INPUT);
-  pinMode(A_BUTTON_PIN, INPUT);
-  pinMode(AS_BUTTON_PIN, INPUT);
-  pinMode(C2_BUTTON_PIN, INPUT);
+    notes[0] =
+        Note(22, 36, "C.wav");
+    notes[1] =
+        Note(23, 37, "C#.wav");
+    notes[2] =
+        Note(24, 38, "D.wav");
+    notes[3] =
+        Note(25, 39, "D#.wav");
+    notes[4] =
+        Note(26, 40, "E.wav");
+    notes[5] =
+        Note(27, 41, "F.wav");
+    notes[6] =
+        Note(28, 42, "F#.wav");
+    notes[7] =
+        Note(29, 43, "G.wav");
+    notes[8] =
+        Note(30, 44, "G#.wav");
+    notes[9] =
+        Note(31, 45, "A.wav");
+    notes[10] =
+        Note(32, 46, "A#.wav");
+    notes[11] =
+        Note(33, 47, "B.wav");
+    notes[12] =
+        Note(34, 48, "C2.wav");
 
-  pinMode(C_LED_PIN, OUTPUT);
-  pinMode(CS_LED_PIN, OUTPUT);
-  pinMode(D_LED_PIN, OUTPUT);
-  pinMode(DS_LED_PIN, OUTPUT);
-  pinMode(E_LED_PIN, OUTPUT);
-  pinMode(F_LED_PIN, OUTPUT);
-  pinMode(FS_LED_PIN, OUTPUT);
-  pinMode(G_LED_PIN, OUTPUT);
-  pinMode(GS_LED_PIN, OUTPUT);
-  pinMode(A_LED_PIN, OUTPUT);
-  pinMode(AS_LED_PIN, OUTPUT);
-  pinMode(C2_LED_PIN, OUTPUT);
+    playIntro();
+};
 
-  pinMode(CONTROL_BUTTON_PIN, INPUT);
+// const int songNotes[] = {0, 0, 7, 7, 9, 9, 7, 5, 5, 4, 4, 2, 2, 0, 7, 7, 5, 5, 4, 4, 2, 7, 7, 5, 5, 4, 4, 2};
+// const int songDurations[] = {2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
+// const int bpm = 60;
 
-  File songs = SD.open("songs.json");
-  if (songs) {
-    Serial.println("songs.txt:");
-    while (songs.available()) {
-      Serial.write(songs.read());
+const int songNotes[] = {0, 1, 0, 0};
+const int songDurations[] = {0, 0, 0, 1};
+const int bpm = 120;
+
+
+void playSong() {
+    unsigned long clockDelay = 0;
+    int i = 0;
+    
+    Serial.println("Playing song");
+    for (int songNote : songNotes) {
+        Serial.print("Note: ");
+        Serial.println();
+        notes[songNote].turnLedOn();
+        
+        // Translate from bpm to milliseconds that a quarter last:
+        int millisecondsThatAQuarterLast = (bpm / 60) * 1000;
+        // How long will be the led turned on?
+        int noteDuration = songDurations[i];
+        unsigned long clockDelayPeriod;
+        if (noteDuration == 0) { // Whole
+          clockDelayPeriod = millisecondsThatAQuarterLast * 4;
+        } else if (noteDuration == 1) { // Half
+          clockDelayPeriod = millisecondsThatAQuarterLast * 2;
+        } else if (noteDuration == 2) { // Quarter
+          clockDelayPeriod = millisecondsThatAQuarterLast;
+        } else if (noteDuration == 3) { // QuarterD
+          clockDelayPeriod = millisecondsThatAQuarterLast + (millisecondsThatAQuarterLast / 2);
+        } else if (noteDuration == 4) { // Eigth
+          clockDelayPeriod = millisecondsThatAQuarterLast / 2;
+        } else if (noteDuration == 5) { // EigthD
+          clockDelayPeriod = millisecondsThatAQuarterLast / 2 + millisecondsThatAQuarterLast / 4;
+        } else if (noteDuration == 6) { // Semiquaver
+          clockDelayPeriod = millisecondsThatAQuarterLast / 4;
+        }
+        while (millis() <= clockDelay + clockDelayPeriod) {
+          for (int j = 0; j < 12; j++) { // 12 is the number of notes
+            notes[j].checkIfPlaySound();
+          }
+        }
+        clockDelay += clockDelayPeriod;
+        i++;
+        notes[songNote].turnLedOff();
     }
-    songs.close();
-  } else {
-    Serial.println("error opening file");
-  }
 }
 
-int checkButtons() {
-  CButtonState = digitalRead(C_BUTTON_PIN);
-  CSButtonState = digitalRead(CS_BUTTON_PIN);
-  DButtonState = digitalRead( D_BUTTON_PIN);
-  DSButtonState = digitalRead(DS_BUTTON_PIN);
-  EButtonState = digitalRead( E_BUTTON_PIN);
-  FButtonState = digitalRead( F_BUTTON_PIN);
-  FSButtonState = digitalRead(FS_BUTTON_PIN);
-  GButtonState = digitalRead( G_BUTTON_PIN);
-  GSButtonState = digitalRead(GS_BUTTON_PIN);
-  AButtonState = digitalRead( A_BUTTON_PIN);
-  ASButtonState = digitalRead(AS_BUTTON_PIN);
-  C2ButtonState = digitalRead(C2_BUTTON_PIN);
-
-  ControlButtonState = digitalRead(C2_BUTTON_PIN);
-
-  if (ControlButtonState == HIGH) {
-    if (CButtonState == HIGH) {
-      return STOP_PLAYING;
+void freePractice() {
+    for (int j = 0; j < 12; j++) { // 12 is the number of notes
+        notes[j].checkIfPlaySound();
     }
-    if (CSButtonState == HIGH) {
-      return PLAY_SONG_1;
-    }
-    if (DButtonState == HIGH) {
-      return PLAY_SONG_2;
-    }
-    if (DSButtonState == HIGH) {
-      return PLAY_SONG_3;
-    }
-    if (EButtonState == HIGH) {
-      return PLAY_SONG_4;
-    }
-    if (FButtonState == HIGH) {
-      return PLAY_SONG_5;
-    }
-    if (FSButtonState == HIGH) {
-      return PLAY_SONG_6;
-    }
-    if (GButtonState == HIGH) {
-      return PLAY_SONG_7;
-    }
-    if (GSButtonState == HIGH) {
-      return PLAY_SONG_8;
-    }
-  } else {
-    if (CButtonState == HIGH) {
-      tmrpcm.play("C.wav");
-    }
-    if (CSButtonState == HIGH) {
-      tmrpcm.play("C#.wav");
-    }
-    if (DButtonState == HIGH) {
-      tmrpcm.play("D.wav");
-    }
-    if (DSButtonState == HIGH) {
-      tmrpcm.play("D#.wav");
-    }
-    if (EButtonState == HIGH) {
-      tmrpcm.play("E.wav");
-    }
-    if (FButtonState == HIGH) {
-      tmrpcm.play("F.wav");
-    }
-    if (FSButtonState == HIGH) {
-      tmrpcm.play("F#.wav");
-    }
-    if (GButtonState == HIGH) {
-      tmrpcm.play("G.wav");
-    }
-    if (GSButtonState == HIGH) {
-      tmrpcm.play("G#.wav");
-    }
-    if (AButtonState == HIGH) {
-      tmrpcm.play("A.wav");
-    }
-    if (ASButtonState == HIGH) {
-      tmrpcm.play("A#.wav");
-    }
-    if (BButtonState == HIGH) {
-      tmrpcm.play("B.wav");
-    }
-    if (C2ButtonState == HIGH) {
-      tmrpcm.play("C2.wav");
-    }
-  }
 }
 
-void playSongLeds(int songId) {
-
-}
-
-void loop() {
-  int status = checkButtons();
-  if (status == )
+void loop()
+{
+  // playSong();
+    freePractice();
 }
